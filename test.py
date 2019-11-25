@@ -15,7 +15,7 @@ for i in list1:
         high  = int(i[0])
         print(high)
 '''
-
+# Yay guthub pushes are working
 ranklist = ['A', 'J', 'Q', 'K']
 
 list2 = ['10S', '8H', '2D']
