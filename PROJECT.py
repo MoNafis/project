@@ -2,11 +2,16 @@
 This would be our main class structure for now
 """
 
+import random
+
 class poker(object):
   
   def __init__(self):
     
-		self.card_deck = []
+		self.carddeck = [] 
+		 # shuffled deck of cards
+		self.shuffledeck = random.shuffle(self.carddeck)
+		
 		self.player1_cards = []
 		self.player2_cards = []
 		self.community_cards = []
@@ -23,36 +28,49 @@ class poker(object):
 		5 random community cards and assign them here
 		"""
 		
+  def card_deck(self):
 	
+	self.deletelist = []
+	
+	for i in self.community_cards:
+		self.deletelist.append(i)
+	
+	self.deletelist.append(self.player1_cards[0])
+	self.deletelist.append(self.player1_cards[1])
+	self.deletelist.append(self.player2_cards[0])
+	self.deletelist.append(self.player2_cards[1])
+	
+	for k in self.deletelist:
+		self.shuffledeck.remove(k)
     
-  def five_of_kind(self):
+  def five_of_kind(self, x):
     pass
   
-  def straight_flush(self):
+  def straight_flush(self, x):
     pass
     
-   def four_of_kind(self):
+   def four_of_kind(self, x):
     pass
    
-   def full_house(self):
+   def full_house(self, x):
     pass
    
-   def flush(self):
+   def flush(self, x):
     pass
     
-   def straight(self):
+   def straight(self, x):
     pass
     
-   def three_of_kind(self):	
+   def three_of_kind(self, x):	
     pass
     
-   def two_pair(self):
+   def two_pair(self, x):
     pass
     
-   def one pair(self):
+   def one pair(self, x):
     pass
    
-   def high_card(self):
+   def high_card(self, x):
     pass
     
     ------------------------------------------
