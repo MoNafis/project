@@ -12,6 +12,7 @@ class poker(object):
 		 # shuffled deck of cards
 		self.shuffledeck = random.shuffle(self.carddeck)
 		
+		self.suits = ['H', 'S', 'D', 'C']
 		self.player1_cards = []
 		self.player2_cards = []
 		self.community_cards = []
@@ -50,7 +51,24 @@ class poker(object):
     pass
     
    def four_of_kind(self, x):
-    pass
+	
+	if x == 1:
+		d = self.player1_cards
+	elif x == 2:
+		d = self.player2_cards
+	
+	for s in self.suits:
+		
+		counter = 0
+		
+		for r in range( len(d)):
+			
+			if [0] == s:
+				counter+=1
+			if counter == 4:
+				return True
+				break
+    
    
    def full_house(self, x):
     pass
@@ -61,8 +79,25 @@ class poker(object):
    def straight(self, x):
     pass
     
-   def three_of_kind(self, x):	
-    pass
+   def three_of_kind(self, x):
+	
+	if x == 1:
+		d = self.player1_cards
+	elif x == 2:
+		d = self.player2_cards
+	
+	for s in self.suits:
+		
+		counter = 0
+		
+		for r in range( len(d)):
+			
+			if r[0] == s:
+				counter+=1
+			if counter == 3:
+				return True
+				break
+    
     
    def two_pair(self, x):
     pass
@@ -81,9 +116,9 @@ class poker(object):
     """
     if player == 1:
 		
-		x = self.player1_cards
+		r = self.player1_cards
     elif player == 2:
-		x = self.player2_cards
+		r = self.player2_cards
 	
     while 1 == 1:
       
