@@ -51,18 +51,18 @@ print("\nPlayer 1:", Player1_list)
 print("PLayer 2:", Player2_list)
     
 
-def isStraight():
+def isStraight(community,player):
     straight1 = []
     
     value_list = []
     
     alist = []
     
-    straight1.append(str(Player1_list[0]))
-    straight1.append(str(Player1_list[1]))
-    for i in Community_cards:
+    straight1.append(str(player[0]))
+    straight1.append(str(player[1]))
+    for i in community:
         straight1.append(str(i))
-    print(straight1)
+    
 
     
     for i in straight1:
@@ -70,16 +70,26 @@ def isStraight():
         value_list.append(find_value)
         LL = value_list
         value_list.sort()
-        
+    print(value_list)
     alist = list(set(value_list))
 
+    if len(alist)>4:
+
+        if  (alist[4] - alist[0]) == 4:
+            for i in alist:
+                if LL[0] == i or LL[0] == i:
+                    return True
+                    break
+        else:
+                return False
+
+def main(community,player1,player2):
+    if isStraight(community,player1) == True and isStraight(community,player2) == True:
+        print("It is a tie with: ","need to return communitycards here")
+    elif isStraight(community,player1) == True:
+        print("Player 1 wins","need to return winning hand for player1 here")
+    elif isStraight(community,player2) == True:
+        print("Player 2 wins","need to return winning hand player2 here")
 
 
-    if  (alist[4] - alist[0]) == 4:
-        for i in alist:
-            if LL[0] == i or LL[0] == i:
-                print('Player 1 wins with a Straight: ',straight1[0:5])
-                break
-    else:
-            print('not a straight')
-isStraight()
+main(Community_cards,Player1_list,Player2_list)
