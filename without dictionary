@@ -60,7 +60,34 @@ for i in Community_cards:
 print("Community Cards: ",Community_cards)                     
 print("\nPlayer 1:", Player1_list)
 print("PLayer 2:", Player2_list)
+
+def isfour_of_kind(community,player):
+    find_rank = []
+    value_list= []
     
+    find_rank.append(player[0])
+    find_rank.append(player[1])
+            
+    for i in community:
+         find_rank.append(i)
+
+    for i in find_rank:
+        Value = i.get_rank()
+        value_list.append(Value)
+        
+    print(value_list)
+
+
+    for i in range(7):
+        check = 0
+        for j in range(7):
+            if value_list[i] == value_list[j]:
+                check += 1
+                if check>=4:
+                    return True
+            else:
+                pass
+
 
 def isStraight(community,player):
     straight1 = []
@@ -97,12 +124,26 @@ def isStraight(community,player):
 
 
 def main(community,player1,player2):
+
+    if isfour_of_kind(community,player1) == True and isfour_of_kind(community,player2) == True:
+        print("It is a tie with a four of a kind: ", Community_cards)
+        break
+    elif isfour_of_kind(community,player1) == True:
+        print("Player 1 wins with a four of a kind: ", Player1_wins)
+        break
+    elif isfour_of_kind(community,player2) == True:
+        print("Player 2 wins with a four of a kind: ", Player2_wins)
+        break
+        
     if isStraight(community,player1) == True and isStraight(community,player2) == True:
         print("It is a tie with a straight: ",Community_cards)
+        break
     elif isStraight(community,player1) == True:
         print("Player 1 wins with a straight",Player1_wins[0:5])
+        break
     elif isStraight(community,player2) == True:
         print("Player 2 wins with a straight",Player2_wins[0:5])
+        break
 
 
 main(Community_cards,Player1_list,Player2_list)
