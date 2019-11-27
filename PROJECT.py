@@ -48,7 +48,13 @@ class poker(object):
   
 
   def straight_flush(self, x):
-    pass
+    
+			
+	for i in self.suits:
+			counter = 0
+			
+			for i in range(0, len(
+			
     
    def four_of_kind(self, x):
 	
@@ -66,7 +72,7 @@ class poker(object):
 
     		elif i == 'Q':
         		num1 = 12
-
+ 
 		elif i == 'K':
         		num1 = 13
 			
