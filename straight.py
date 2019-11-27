@@ -5,13 +5,17 @@ import sys
 rank_list = ['x', 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 
 playerlist1 = ['QS', 'JD', '8H', '10C', '9S']
+playerlist2 = ['', '', '', '', '']
 print(playerlist1, "this is the players hand")
 # PART 1
 index_list = []
 for i in playerlist1:
+
     b = i[0]
+
     if b == '1':
         index = 10
+
     else:
         index = rank_list.index(b)
     index_list += [index]
