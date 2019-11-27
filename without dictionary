@@ -127,23 +127,23 @@ def main(community,player1,player2):
 
     if isfour_of_kind(community,player1) == True and isfour_of_kind(community,player2) == True:
         print("It is a tie with a four of a kind: ", Community_cards)
-        break
+        
     elif isfour_of_kind(community,player1) == True:
         print("Player 1 wins with a four of a kind: ", Player1_wins)
-        break
+        
     elif isfour_of_kind(community,player2) == True:
         print("Player 2 wins with a four of a kind: ", Player2_wins)
-        break
+        
         
     if isStraight(community,player1) == True and isStraight(community,player2) == True:
         print("It is a tie with a straight: ",Community_cards)
-        break
+        
     elif isStraight(community,player1) == True:
         print("Player 1 wins with a straight",Player1_wins[0:5])
-        break
+        
     elif isStraight(community,player2) == True:
         print("Player 2 wins with a straight",Player2_wins[0:5])
-        break
+        
 
 
 main(Community_cards,Player1_list,Player2_list)
