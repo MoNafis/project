@@ -12,10 +12,11 @@ class poker(object):
 		 # shuffled deck of cards
 		self.shuffledeck = random.shuffle(self.carddeck)
 		self.suits = ['H', 'S', 'D', 'C']
+		self.ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
 		
 		self.player1_cards = []
 		self.player2_cards = []
-		self.community_cards = []
+		self.community_cards = [
 		
 		
 		self.player1_score = 0
@@ -53,51 +54,52 @@ class poker(object):
 	
 	for i in ranks:
 
-    counter = 0
-    num1 = 0
+    		counter = 0
+    		num1 = 0
 
-    if i == 'A':
+    		if i == 'A':
 
-        num1 = 1
+        		num1 = 1
 
-    elif i == 'J':
-        num1 =  11
+   		 elif i == 'J':
+        		num1 =  11
 
-    elif i == 'Q':
-        num1 = 12
+    		elif i == 'Q':
+        		num1 = 12
 
-    elif i == 'K':
-        num1 = 13
+		elif i == 'K':
+        		num1 = 13
 
-    else:
-        num1 = 1
+    		else:
+        		num1 = 1
     
-    for  k in range ( 0 ,len(cards)):
+    		for  k in range ( 0 ,len(cards)):
     
-        asd = cards[k][0]
+			asd = cards[k][0]
 
-        if asd == 'A':
-            num2 = 1
+			if asd == 'A':
+			    num2 = 1
 
-        elif asd == 'J':
-            num2 = 11
-            
-        elif asd == 'Q':
-            num2 = 12
+			elif asd == 'J':
+			    num2 = 11
 
-        elif asd == 'K':
-            num2 = 13
+			elif asd == 'Q':
+			    num2 = 12
 
-        else:
-            num2 = int(asd)
+			elif asd == 'K':
+			    num2 = 13
+
+			else:
+			    	num2 = int(asd)
 
 
-        if num2 == num1:
-            
-            counter+=1
-            
-	if counter == 4:
-	    return True
+			if num2 == num1:
+				
+
+			    	counter+=1
+
+			if counter == 4:
+			    	return True
 	  
     
    
@@ -137,9 +139,9 @@ class poker(object):
     else:
         num1 = 1
     
-    for  k in range ( 0 ,len(cards)):
+    for  k in range ( 0 ,len(d)):
   
-        asd = cards[k][0]
+        asd = d[k][0]
 
         if asd == 'A':
             num2 = 1
@@ -167,11 +169,72 @@ class poker(object):
     
     
    def two_pair(self, x):
-    pass
+	
+	if x == 1:
+		d = self.player1_cards
+	elif x == 2:
+		d = self.player2_cards
+		
+	
+	
+	for i in self.ranks:
+			
+			counter1 = 0
+			
+			for q in range(0,len(d)):
+			
+				c = d[q][0]
+				
+			if c == i:
+				counter1+=1
+			
+			if counter1 == 2:
+				break
+			
+			
+				
+	for i in self.ranks:
+			
+			counter2 = 0
+			
+			for q in range(0,len(d)):
+			
+				c = d[q][0]
+				
+			if c == i:
+				counter2+=1
+			
+			if counter2 == 2:
+				break
+	
+	if counter1 == 2 and counter2 == 2:
+			return True
+			
+	else:
+			return False
+			
     
    def one pair(self, x):
-    pass
-   
+			
+    for i in self.ranks:
+			
+			counter = 0
+			
+			for q in range(0,len(d)):
+			
+				c = d[q][0]
+				
+			if c == i:
+				counter+=1
+			
+			if counter == 2:
+				break
+     if counter == 2:
+			return True
+	 else:
+			return False
+			
+			
    def high_card(self, x):
 	
 	if x == 1:
