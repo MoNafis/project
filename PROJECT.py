@@ -69,6 +69,9 @@ class poker(object):
 
 		elif i == 'K':
         		num1 = 13
+			
+		elif i == '1':
+			num1 = 10
 
     		else:
         		num1 = 1
@@ -135,6 +138,9 @@ class poker(object):
 
     elif i == 'K':
         num1 = 13
+    
+    elif i == '1':
+	num1 = 10
 
     else:
         num1 = 1
@@ -154,6 +160,9 @@ class poker(object):
 
         elif asd == 'K':
             num2 = 13
+	
+	elif asd == '1':
+	    num2 = 10
 
         else:
             num2 = int(asd)
@@ -254,6 +263,9 @@ class poker(object):
 		       num1 = 12
 		elif j[0] == 'K':
 		       num1 = 13
+		
+		elif j[0] == '1':
+		       num1 = 10
 		else:    
 		       num1 = int(j[0])
 		
