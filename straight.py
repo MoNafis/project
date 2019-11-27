@@ -5,7 +5,7 @@ import sys
 rank_list = ['x', 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 
 playerlist1 = ['QS', 'JD', '8H', '10C', '9S']
-playerlist2 = ['', '', '', '', '']
+playerlist2 = ['AS', '5D', '6C', '8H', '7S']
 print(playerlist1, "this is the players hand")
 # PART 1
 index_list = []
