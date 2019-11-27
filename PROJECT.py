@@ -11,11 +11,12 @@ class poker(object):
 		self.carddeck = [] 
 		 # shuffled deck of cards
 		self.shuffledeck = random.shuffle(self.carddeck)
-		
 		self.suits = ['H', 'S', 'D', 'C']
+		
 		self.player1_cards = []
 		self.player2_cards = []
 		self.community_cards = []
+		
 		
 		self.player1_score = 0
 		self.player2_score = 0
@@ -43,9 +44,6 @@ class poker(object):
 	
 	for k in self.deletelist:
 		self.shuffledeck.remove(k)
-    
-  def five_of_kind(self, x):
-    pass
   
   def straight_flush(self, x):
     pass
@@ -106,7 +104,31 @@ class poker(object):
     pass
    
    def high_card(self, x):
-    pass
+	
+	if x == 1:
+		d = self.player1_cards
+	elif x == 2:
+		d = self.player2_cards
+
+	highest = 0
+	
+	for j in d:
+		
+		if j[0] == 'A':
+			num1 = 1
+		elif j[0] == 'J':
+			num1 = 11
+		elif j[[0] == 'Q':
+		       num1 = 12
+		elif j[0] == 'K':
+		       num1 = 13
+		else:    
+		       num1 = int(j[0])
+		
+		if num1 > highest:
+			highest = num1
+	return num1
+    
     
     ------------------------------------------
    def test_hand(self, player):
@@ -117,48 +139,47 @@ class poker(object):
     if player == 1:
 		
 		r = self.player1_cards
+		k = self.player1_score
+		h = self.player1_high
     elif player == 2:
 		r = self.player2_cards
+		k = self.player2_score
+		h = self.player2_high
 	
     while 1 == 1:
-      
-      test_hand(self, x)
-      
-      if test_hand(self, x) == True:
-        self.score = 9
+        
+	      
+      if straight_flush(self, r) == True:
+        k= 9
         break
         
-      if straight_flush(self, x) == True:
-        self.score = 8
+      if four_of_kind(self, r) == True:
+        k = 7
         break
         
-      if four_of_kind(self, x) == True:
-        self.score = 7
+      if full_house(self, r) == True:
+        k = 6
         break
         
-      if full_house(self, x) == True:
-        self.score = 6
-        break
-        
-      if flush(self, x) == True:
-        self.score = 5
+      if flush(self, r) == True:
+        k = 5
         break
       
-      if straight(self, x) == True:
-        self.score = 4
+      if straight(self, r) == True:
+        k = 4
         break
         
-      if three_pair(self, x) == True:
-        self.score = 3
+      if three_pair(self, r) == True:
+        k = 3
         break
         
-      if one_pair(self, x) == True:
-        self.score = 2
+      if one_pair(self, r) == True:
+        k = 2
         break
       
 
       self.score = 1
-      self.high_number = high_card(self, x):
+      h = high_card(self, x):
       break
 		
   
