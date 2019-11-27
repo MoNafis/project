@@ -98,7 +98,7 @@ class poker(object):
             
 	if counter == 4:
 	    return True
-	    break
+	  
     
    
    def full_house(self, x):
@@ -163,7 +163,7 @@ class poker(object):
             
 	if counter == 3:
 	    return True
-	    break
+	  
     
     
    def two_pair(self, x):
