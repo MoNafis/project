@@ -45,27 +45,60 @@ class poker(object):
 	for k in self.deletelist:
 		self.shuffledeck.remove(k)
   
+
   def straight_flush(self, x):
     pass
     
    def four_of_kind(self, x):
 	
-	if x == 1:
-		d = self.player1_cards
-	elif x == 2:
-		d = self.player2_cards
-	
-	for s in self.suits:
-		
-		counter = 0
-		
-		for r in range( len(d)):
-			
-			if [0] == s:
-				counter+=1
-			if counter == 4:
-				return True
-				break
+	for i in ranks:
+
+    counter = 0
+    num1 = 0
+
+    if i == 'A':
+
+        num1 = 1
+
+    elif i == 'J':
+        num1 =  11
+
+    elif i == 'Q':
+        num1 = 12
+
+    elif i == 'K':
+        num1 = 13
+
+    else:
+        num1 = 1
+    
+    for  k in range ( 0 ,len(cards)):
+    
+        asd = cards[k][0]
+
+        if asd == 'A':
+            num2 = 1
+
+        elif asd == 'J':
+            num2 = 11
+            
+        elif asd == 'Q':
+            num2 = 12
+
+        elif asd == 'K':
+            num2 = 13
+
+        else:
+            num2 = int(asd)
+
+
+        if num2 == num1:
+            
+            counter+=1
+            
+	if counter == 4:
+	    return True
+	    break
     
    
    def full_house(self, x):
@@ -84,17 +117,53 @@ class poker(object):
 	elif x == 2:
 		d = self.player2_cards
 	
-	for s in self.suits:
-		
-		counter = 0
-		
-		for r in range( len(d)):
-			
-			if r[0] == s:
-				counter+=1
-			if counter == 3:
-				return True
-				break
+	for i in ranks:
+
+    counter = 0
+    num1 = 0
+
+    if i == 'A':
+        num1 = 1
+	
+    elif i == 'J':
+        num1 =  11
+
+    elif i == 'Q':
+        num1 = 12
+
+    elif i == 'K':
+        num1 = 13
+
+    else:
+        num1 = 1
+    
+    for  k in range ( 0 ,len(cards)):
+  
+        asd = cards[k][0]
+
+        if asd == 'A':
+            num2 = 1
+
+        elif asd == 'J':
+            num2 = 11
+            
+        elif asd == 'Q':
+            num2 = 12
+
+        elif asd == 'K':
+            num2 = 13
+
+        else:
+            num2 = int(asd)
+
+
+        if num2 == num1:
+            
+            counter+=1
+            
+	if counter == 3:
+	    return True
+	    break
     
     
    def two_pair(self, x):
