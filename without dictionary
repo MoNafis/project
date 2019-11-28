@@ -1,22 +1,5 @@
 import cards
-''' The basic process is this:
-    1) You create a Deck instance, which is filled (automatically) with 52 Card instances
-    2) You can deal those cards out of the deck into hands, each hand a list of cards
-    3) You then manipulate cards as you add/remove them from a hand
-'''
-value = 0
-my_dict = {}
-my_deck = cards.Deck()
-
-LocalDeck = str(my_deck)
-LocalDeck = LocalDeck.split(',')
-
-for i in LocalDeck:
-    my_dict[i] = value
-    value = (value+1)%13
-print(my_dict)
-    
-
+ 
 my_deck = cards.Deck()
 my_deck.shuffle()
 
@@ -40,9 +23,24 @@ for i in range(2):
 
 for i in range(5):
     Community_cards.append(my_deck.deal())
+    
+def delete(self):
 
-Player1_wins = []
-Player2_wins = []
+    deletelist = []
+    
+    for i in community_cards:
+        deletelist.append(i)
+    for i in player1_list:
+        deletelist.append(i)
+    for i in player2_list:
+        deletelist.append(i)
+    
+    for i in deletelist:
+        my_deck.remove(i)
+        
+'''
+Player1_wins = 0
+Player2_wins = 0
 
 for i in Player1_list:
     Player1_wins.append(i)
@@ -53,7 +51,7 @@ for i in Player2_wins:
     Player2_wins.append(i)
 for i in Community_cards:
     Player2_wins.append(i)
-
+'''
 
 
 
@@ -117,7 +115,7 @@ def isStraight(community,player):
         if  (alist[4] - alist[0]) == 4:
             for i in alist:
                 if LL[0] == i or LL[0] == i:
-                    return True
+                    return True,
                     break
         else:
                 return False
@@ -127,7 +125,7 @@ def main(community,player1,player2):
 
     if isfour_of_kind(community,player1) == True and isfour_of_kind(community,player2) == True:
         print("It is a tie with a four of a kind: ", Community_cards)
-        
+       
     elif isfour_of_kind(community,player1) == True:
         print("Player 1 wins with a four of a kind: ", Player1_wins)
         
