@@ -1,7 +1,7 @@
 """
 This would be our main class structure for now
 """
-
+print("Let's play Poker!")
 import random
 
 class poker(object):
