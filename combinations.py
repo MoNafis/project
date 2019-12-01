@@ -24,7 +24,8 @@ from itertools import combinations
 player1_hand = []
 player2_hand = []
 
-comb = combinations(Community_cards, 3)
+comb = combinations(Community_cards, 3) # adds all the combinations of the 3  cards to make a hand of 5 cards, so basically 
+# finding out the best hand from the total 7 cards
 a = 1
 for i in list(comb):
     print(a, "this is the combination", i)
@@ -32,4 +33,6 @@ for i in list(comb):
     print(a, player1_hand, "this is the players hand")
     print()
     a += 1
+    for j in player1_hand:
+
 
