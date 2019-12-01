@@ -1,7 +1,7 @@
 """
 This would be our main class structure for now
 """
-
+print("Let's play Poker!")
 import random
 
 class poker(object):
@@ -16,7 +16,7 @@ class poker(object):
 		
 		self.player1_cards = []
 		self.player2_cards = []
-		self.community_cards = [
+		self.community_cards = []
 		
 		
 		self.player1_score = 0
@@ -47,13 +47,27 @@ class poker(object):
 		self.shuffledeck.remove(k)
   
 
-  def straight_flush(self, x):
-    
-			
-	for i in self.suits:
-			counter = 0
-			
-			for i in range(0, len(
+    def staight_flush(player,cards):
+    	if player == 1:
+        	x = player1_cards
+    	elif player == 2:
+        	x = player2_cards
+    	num1 = len(x)
+    	for i in range(num1):
+
+        	for k in range(0, num1 - 1):
+            		if x[k].get_value > x[k+1].get_value:
+                		x[k], x[k+1] = x[k+1], x[k]
+    	if x == x.equal_suit(y):
+        	counter = 0
+        	for j in range(0, num1-1):
+            		if x[k].get_value - x[k+1].get_value == 1:
+                		counter+=1
+            		else:
+                		return False
+        	if counter == 5:
+            		return True
+        
 			
     
    def four_of_kind(self, x):
@@ -118,9 +132,25 @@ class poker(object):
    def flush(self, x):
     pass
     
-   def straight(self, x):
-    pass
-    
+   def straight(self, player, cards):
+ 	if player == 1:
+		x = player1_cards
+	elif player == 2:	
+		x = player2_cards
+	num1 = len(x)	
+    	for i in range ( num1):
+			
+		for k in range(0, num1 - 1):
+				if x[k].get_value > x[k+1].get_value:
+					x[k], x[k+1] = x[k+1], x[k]
+	counter = 0
+	for j in range(0, num1 - 1):
+		if x[k].get_value - x[k+1].get_value == 1:
+			counter+=1
+		else:
+			return False
+	if counter == 5:
+		return True		
    def three_of_kind(self, x):
 	
 	if x == 1:
